@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+{% block content %}
+	
+	<div>
+		<div></div>
+		<h1>Interface de  comandos dos Leds</h1>
+		<div></div>
+	</div>
+	<a href = "{{url_for('comando_led', cod_led = 1)}}">
+		<div>
+			<h3>LED 1 ### ON</h3>
+		</div>
+	</a>
+	<div></div>
+	<a href = "{{url_for('comando_led', cod_led = 2)}}">
+		<div>
+			<h3>LED 2 ### ON</h3>
+		</div>
+	</a>
+	<div></div>
+	<a href = "{{url_for('comando_led', cod_led = 3)}}">
+		<div>
+			<h3>LED 3 ### ON</h3>
+		</div>
+	</a>
+	<div></div>
+	<a href = "{{url_for('comando_led', cod_led = 4)}}">
+		<div>
+			<h3>LED 4 ### ON</h3>
+		</div>
+	</a>
+	<div></div>
+	<a href = "{{url_for('comando_led', cod_led = 5)}}">
+		<div>
+			<h3>LED 1 ### OFF</h3>
+		</div>
+	</a>
+	<div></div>
+	<a href = "{{url_for('comando_led', cod_led = 6)}}">
+		<div>
+			<h3>LED 2 ### OFF</h3>
+		</div>
+	</a>
+	<div></div>
+	<a href = "{{url_for('comando_led', cod_led = 7)}}">
+		<div>
+			<h3>LED 3 ### OFF</h3>
+		</div>
+	</a>
+	<div></div>
+	<a href = "{{url_for('comando_led', cod_led = 8)}}">
+		<div>
+			<h3>LED 4 ### OFF</h3>
+		</div>
+	</a>
+	<div></div>
+	<a href = "{{url_for('comando_led', cod_led = 9)}}">
+		<div>
+			<h3>APAGAR TODOS OS LEDS</h3>
+		</div>
+	</a>
+
+{% endblock %}
