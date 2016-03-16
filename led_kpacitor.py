@@ -26,8 +26,12 @@ led2 = GPIO.PWM(22, 100) #Criando objeto para o Led2
 led3 = GPIO.PWM(23, 100) #Criando objeto para o Led3
 led4 = GPIO.PWM(27, 100) #Criando objeto para o Led4
 
-#Função para receber a URL e comandar os leds
+
 @app.route("/")
+def hello():
+    return render_template('led_interface.html')
+
+#Função para receber a URL e comandar os leds
 @app.route('/comando_led/<int:cod_led>/', methods=['GET', 'POST'])
 def comando_led(cod_led):
 	if request.method == 'GET':
@@ -38,7 +42,7 @@ def comando_led(cod_led):
 		elif cod_led == 3:
 			led3.start(100)
 		elif cod_led == 4:
-			led4.start(100)	
+			led4.start(100)
 		elif cod_led == 5:
 			led1.stop()
 		elif cod_led == 6:
@@ -52,9 +56,13 @@ def comando_led(cod_led):
 			led2.stop()
 			led3.stop()
 			led4.stop()
+	else:
+		led1.stop()
+		led2.stop()
+		led3.stop()
+		led4.stop()
 
 	return render_template('led_interface.html')
-
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
